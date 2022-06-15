@@ -17,7 +17,6 @@ public class YankeeController : EnemyBase
 
     }
 
-
     public override void Start(Rigidbody2D rb)
     {
         
@@ -33,7 +32,7 @@ public class YankeeController : EnemyBase
         while (true)
         {
             
-            float timeChange = Random.Range(2f, 5f);
+            float timeChange = Random.Range(1f, 3f);
 
             Vector2 movement = Vector2.zero;
             movement.x = Random.Range(-1, 2);
