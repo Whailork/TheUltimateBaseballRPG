@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 1f;
     public float jumpForce = 3f;
     private bool canJump = true;
+
+    private float horizontal;
     
     // Start is called before the first frame update
     void Start()
@@ -22,34 +24,36 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        float x = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(x*speed, rb.velocity.y);
+        horizontal = Input.GetAxisRaw("Horizontal");
+        if (Input.GetButtonDown("Jump") && canJump) Jump();
 
-        if (Input.GetButtonDown("Jump") && canJump)
-        {
-            
-            rb.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse);
-            
-        }
+    }
 
+    void Jump()
+    {
+        
+        rb.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse);
+        canJump = false;
+        
     }
 
     private void FixedUpdate()
     {
+
+        rb.velocity = new Vector2(horizontal*speed, rb.velocity.y);
         
-        //check si on peut Sauter
-        if (Physics2D.Raycast(transform.position, Vector3.down, 0.2f, LayerMask.GetMask("Floor")))
+        if (rb.velocity.y <= 0 && Physics2D.Raycast(transform.position, Vector3.down, 0.1f, LayerMask.GetMask("Floor")))
         {
-            
-            Debug.Log("PLANCHER!");
-            
+
+            canJump = true;
+
         }
         
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawLine(transform.position, transform.position + (Vector3.down*0.2f));
+        //Gizmos.DrawLine(transform.position, transform.position + (Vector3.down*0.2f));
         
     }
 }
