@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Animator animator;
     public float speed = 1f;
     public float jumpForce = 3f;
     private bool canJump = true;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
     }
 
@@ -25,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         horizontal = Input.GetAxisRaw("Horizontal");
+        animator.SetFloat("movementX", horizontal);
         if (Input.GetButtonDown("Jump") && canJump) Jump();
 
     }

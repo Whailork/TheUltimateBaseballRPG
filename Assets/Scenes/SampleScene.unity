@@ -510,6 +510,7 @@ GameObject:
   - component: {fileID: 1461482441}
   - component: {fileID: 1461482442}
   - component: {fileID: 1461482443}
+  - component: {fileID: 1461482444}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -601,7 +602,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 420bced029026534f836e9523421ce71, type: 2}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -645,6 +646,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 5
+--- !u!95 &1461482444
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461482438}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e14b209112e7e13478f17bd828c52ccd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1556261526
 GameObject:
   m_ObjectHideFlags: 3
@@ -758,7 +779,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7792208, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
