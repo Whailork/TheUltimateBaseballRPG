@@ -34,5 +34,17 @@ public class BallController : MonoBehaviour
         rb.angularVelocity = -720;
 
     }
-    
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+
+        if (col.collider.CompareTag("enemy"))
+        {
+
+            EnemyController controller = col.collider.GetComponent<EnemyController>();
+            controller.TakeDamage(25, col);
+
+        }
+        
+    }
 }

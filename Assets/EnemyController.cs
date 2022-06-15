@@ -38,7 +38,13 @@ public class EnemyController : MonoBehaviour
         controller.SetEnemyController(this);
         controller.Start(rb);
     }
-    
+
+    public void TakeDamage(int dmg, Collision2D col)
+    {
+        
+        controller.TakeDamage(dmg, col);
+        
+    }
     
     void FixedUpdate()
     {
