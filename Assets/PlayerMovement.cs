@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         GameObject ball = Instantiate(ballPrefab, transform.position + spawnPos, Quaternion.identity);
-
+        animator.SetTrigger("Throw");
         Vector2 direction = new Vector2(0, 0);
         if (horizontal > 0) direction.x = 25;
         else if (horizontal < 0) direction.x = -25;
