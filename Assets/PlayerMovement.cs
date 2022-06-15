@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 1f;
     public float jumpForce = 3f;
     private bool canJump = true;
+    public Vector2 ballSpawnOffset;
+    public GameObject ballPrefab;
 
     private float horizontal;
     
@@ -44,7 +46,27 @@ public class PlayerMovement : MonoBehaviour
 
     void ThrowBall()
     {
+
+        Vector3 spawnPos = ballSpawnOffset;
+        if (horizontal < 0) spawnPos.x *= -1;
+        if (horizontal == 0)
+        {
+
+            spawnPos.x = 0;
+            spawnPos.y *= 2;
+
+        }
+
+        GameObject ball = Instantiate(ballPrefab, transform.position + spawnPos, Quaternion.identity);
+
+        Vector2 direction = new Vector2(0, 0);
+        if (horizontal > 0) direction.x = 25;
+        else if (horizontal < 0) direction.x = -25;
+        else direction.y = 15;
         
+        BallController controller = ball.GetComponent<BallController>();
+        controller.SetDirection(direction);
+
     }
 
     private void FixedUpdate()
