@@ -30,7 +30,7 @@ public class YankeeController : EnemyBase
     protected override void Die(Collision2D col)
     {
 
-        Debug.Log("UNFREEZ");
+        GameValues.cash += 10;
         enemy.StopAllCoroutines();
         rb.freezeRotation = false;
         rb.mass = 5;
