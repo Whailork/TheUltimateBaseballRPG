@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 26087066}
   - component: {fileID: 26087068}
   - component: {fileID: 26087069}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: yankee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -1021,7 +1021,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7788461, y: 1}
+    m_SensorSize: {x: 1.7748344, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
