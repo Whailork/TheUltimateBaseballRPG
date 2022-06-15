@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         animator.SetFloat("movementX", horizontal);
         if (Input.GetButtonDown("Jump") && canJump) Jump();
+        if (Input.GetKeyDown(KeyCode.F)) 
+            ThrowBall();
 
     }
 
@@ -37,6 +39,11 @@ public class PlayerMovement : MonoBehaviour
         
         rb.AddForce(Vector2.up*jumpForce, ForceMode2D.Impulse);
         canJump = false;
+        
+    }
+
+    void ThrowBall()
+    {
         
     }
 
